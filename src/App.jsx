@@ -23,8 +23,8 @@ import {
   X,
 } from "lucide-react";
 import Hero from "./components/Hero.jsx";
-import projectsData from "../../portfolio-projects.json";
-import skillsData from "../../portfolio-skills.json";
+import projectsData from "../portfolio-projects.json";
+import skillsData from "../portfolio-skills.json";
 
 const githubProfile = "https://github.com/prakharmadhesiya2620-cloud";
 const linkedinProfile = "https://www.linkedin.com/in/prakhar-madhesiya-180a873a3/";
