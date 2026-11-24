@@ -1,0 +1,271 @@
+{
+  "schemaVersion": 1,
+  "title": "Verified Skills",
+  "skills": [
+    {
+      "id": "python",
+      "name": "Python",
+      "category": "Programming Languages",
+      "description": "Used across the inspected repositories for applications, notebooks, data processing, and model workflows.",
+      "projectIds": [
+        "multimodal-assistant",
+        "arxiv-cs-chatbot",
+        "medical-qa-chatbot",
+        "realtime-fraud-detector",
+        "customer-churn-predictor",
+        "ai-voice-assistant",
+        "customer-service-chatbot",
+        "trading-bot",
+        "my-first-ai-project",
+        "numpy-exercises"
+      ]
+    },
+    {
+      "id": "streamlit",
+      "name": "Streamlit",
+      "category": "Web Applications",
+      "description": "Built interactive applications and dashboards.",
+      "projectIds": [
+        "multimodal-assistant",
+        "arxiv-cs-chatbot",
+        "medical-qa-chatbot",
+        "realtime-fraud-detector",
+        "customer-churn-predictor",
+        "customer-service-chatbot"
+      ]
+    },
+    {
+      "id": "llm-integration",
+      "name": "Local LLM Integration",
+      "category": "AI Applications",
+      "description": "Integrated Ollama-hosted models in assistant and retrieval-based applications.",
+      "projectIds": [
+        "multimodal-assistant",
+        "arxiv-cs-chatbot",
+        "medical-qa-chatbot",
+        "ai-voice-assistant",
+        "customer-service-chatbot"
+      ]
+    },
+    {
+      "id": "rag",
+      "name": "Retrieval-Augmented Generation",
+      "category": "AI Applications",
+      "description": "Implemented retrieval and LLM answer-generation workflows over local knowledge sources.",
+      "projectIds": [
+        "arxiv-cs-chatbot",
+        "medical-qa-chatbot",
+        "customer-service-chatbot"
+      ]
+    },
+    {
+      "id": "faiss-vector-search",
+      "name": "FAISS Vector Search",
+      "category": "Search and Retrieval",
+      "description": "Created or queried local FAISS indexes using sentence-transformer embeddings.",
+      "projectIds": [
+        "arxiv-cs-chatbot",
+        "medical-qa-chatbot",
+        "customer-service-chatbot"
+      ]
+    },
+    {
+      "id": "langchain",
+      "name": "LangChain",
+      "category": "AI Frameworks",
+      "description": "Used LangChain components for document loading, embeddings, vector stores, prompts, and retrieval QA.",
+      "projectIds": [
+        "arxiv-cs-chatbot",
+        "medical-qa-chatbot",
+        "customer-service-chatbot"
+      ]
+    },
+    {
+      "id": "machine-learning-classification",
+      "name": "Machine Learning Classification",
+      "category": "Machine Learning",
+      "description": "Implemented classification workflows using scikit-learn logistic regression and Random Forest models.",
+      "projectIds": [
+        "realtime-fraud-detector",
+        "customer-churn-predictor"
+      ]
+    },
+    {
+      "id": "data-preprocessing",
+      "name": "Data Preprocessing and Feature Engineering",
+      "category": "Data Science",
+      "description": "Implemented CSV/JSONL ingestion, filtering, missing-value handling, categorical encoding, feature ordering, and numeric scaling.",
+      "projectIds": [
+        "arxiv-cs-chatbot",
+        "realtime-fraud-detector",
+        "customer-churn-predictor"
+      ]
+    },
+    {
+      "id": "model-evaluation",
+      "name": "Model Evaluation",
+      "category": "Machine Learning",
+      "description": "Implemented train/test evaluation and classification metrics, including PR-AUC and ROC-AUC calculation in the fraud training script.",
+      "projectIds": [
+        "realtime-fraud-detector",
+        "customer-churn-predictor"
+      ]
+    },
+    {
+      "id": "computer-vision",
+      "name": "Image Analysis Integration",
+      "category": "AI Applications",
+      "description": "Integrated a local multimodal model to extract structured evidence from uploaded images.",
+      "projectIds": [
+        "multimodal-assistant"
+      ]
+    },
+    {
+      "id": "language-detection",
+      "name": "Language Detection",
+      "category": "Natural Language Processing",
+      "description": "Implemented statistical language identification with script-based and punctuation-based heuristics, plus sentence-level checks.",
+      "projectIds": [
+        "multimodal-assistant"
+      ]
+    },
+    {
+      "id": "keyword-extraction",
+      "name": "Keyword Extraction",
+      "category": "Natural Language Processing",
+      "description": "Used YAKE for unsupervised keyword and phrase extraction from research abstracts.",
+      "projectIds": [
+        "arxiv-cs-chatbot"
+      ]
+    },
+    {
+      "id": "numpy",
+      "name": "NumPy",
+      "category": "Data and Numerical Computing",
+      "description": "Used for array operations in model workflows and introductory notebook exercises.",
+      "projectIds": [
+        "realtime-fraud-detector",
+        "customer-churn-predictor",
+        "ai-voice-assistant",
+        "numpy-exercises"
+      ]
+    },
+    {
+      "id": "pandas",
+      "name": "Pandas",
+      "category": "Data and Numerical Computing",
+      "description": "Used to load, transform, and present tabular datasets.",
+      "projectIds": [
+        "arxiv-cs-chatbot",
+        "realtime-fraud-detector",
+        "customer-churn-predictor"
+      ]
+    },
+    {
+      "id": "data-visualization",
+      "name": "Data Visualization",
+      "category": "Data Science",
+      "description": "Built a Plotly paper-embedding visualization and Streamlit fraud trend chart.",
+      "projectIds": [
+        "arxiv-cs-chatbot",
+        "realtime-fraud-detector"
+      ]
+    },
+    {
+      "id": "tcp-socket-programming",
+      "name": "TCP Socket Programming",
+      "category": "Networking",
+      "description": "Implemented a localhost TCP transaction replay server and a dashboard client.",
+      "projectIds": [
+        "realtime-fraud-detector"
+      ]
+    },
+    {
+      "id": "rest-api-integration",
+      "name": "REST API Integration",
+      "category": "APIs and Networking",
+      "description": "Implemented HTTP requests to a testnet exchange API.",
+      "projectIds": [
+        "trading-bot"
+      ]
+    },
+    {
+      "id": "hmac-signing",
+      "name": "HMAC-SHA256 Request Signing",
+      "category": "APIs and Networking",
+      "description": "Generated HMAC-SHA256 signatures for authenticated testnet API requests.",
+      "projectIds": [
+        "trading-bot"
+      ]
+    },
+    {
+      "id": "cli-development",
+      "name": "Command-Line Application Development",
+      "category": "Application Development",
+      "description": "Built a Click-based CLI with option parsing, validation, API calls, and response reporting.",
+      "projectIds": [
+        "trading-bot"
+      ]
+    },
+    {
+      "id": "desktop-gui",
+      "name": "Desktop GUI Development",
+      "category": "Application Development",
+      "description": "Built a CustomTkinter desktop HUD with scheduled UI updates.",
+      "projectIds": [
+        "ai-voice-assistant"
+      ]
+    },
+    {
+      "id": "audio-processing-integration",
+      "name": "Audio and Speech Integration",
+      "category": "Application Development",
+      "description": "Integrated microphone capture, wake-word model inference, speech recognition, and text-to-speech.",
+      "projectIds": [
+        "ai-voice-assistant"
+      ]
+    },
+    {
+      "id": "data-ingestion",
+      "name": "Data Ingestion and File Processing",
+      "category": "Data Engineering",
+      "description": "Implemented CSV, JSONL, and text-file loading in project-specific pipelines.",
+      "projectIds": [
+        "arxiv-cs-chatbot",
+        "medical-qa-chatbot",
+        "customer-service-chatbot",
+        "realtime-fraud-detector",
+        "customer-churn-predictor"
+      ]
+    },
+    {
+      "id": "logging",
+      "name": "Application Logging",
+      "category": "Application Development",
+      "description": "Implemented Python logging to console and file in the trading CLI, with event logs in other demos.",
+      "projectIds": [
+        "trading-bot",
+        "realtime-fraud-detector",
+        "ai-voice-assistant"
+      ]
+    },
+    {
+      "id": "scheduled-jobs",
+      "name": "Scheduled Jobs",
+      "category": "Automation",
+      "description": "Implemented periodic knowledge-base update checks using the schedule library.",
+      "projectIds": [
+        "medical-qa-chatbot"
+      ]
+    },
+    {
+      "id": "jupyter-notebooks",
+      "name": "Jupyter Notebook",
+      "category": "Developer Tools",
+      "description": "Created and organized introductory Python/NumPy exercises in a notebook.",
+      "projectIds": [
+        "numpy-exercises"
+      ]
+    }
+  ]
+}

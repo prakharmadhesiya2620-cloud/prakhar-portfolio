@@ -1,0 +1,349 @@
+{
+  "schemaVersion": 1,
+  "title": "Project Portfolio",
+  "rankingNote": "Ranks are editorial comparisons based on inspected repository implementation and broad internship relevance; they are not measured scores.",
+  "projects": [
+    {
+      "id": "multimodal-assistant",
+      "name": "Multimodal Reasoning Assistant",
+      "repository": "MULTIMODAL_ASSISTANT",
+      "repositoryUrl": "https://github.com/prakharmadhesiya2620-cloud/MULTIMODAL_ASSISTANT",
+      "rank": 1,
+      "technicalQuality": "high",
+      "internshipRelevance": "high",
+      "description": "A Streamlit assistant that analyzes uploaded images into structured evidence, detects ambiguous questions, generates evidence-grounded responses, and validates both claims and response language.",
+      "technologies": {
+        "languages": ["Python"],
+        "frameworks": ["Streamlit"],
+        "libraries": ["Ollama", "Pillow", "langdetect"],
+        "modelsAndTools": ["LLaVA", "llama3.2"]
+      },
+      "features": [
+        "Image-to-structured-evidence analysis",
+        "Conversation context with reusable recent image evidence",
+        "Language and mixed-language detection",
+        "Ambiguity check with clarification branch",
+        "Separate evidence and language validation stages",
+        "Visible reasoning-stage trace in the UI"
+      ],
+      "limitations": [
+        "LLM-based image interpretation, ambiguity decisions, and validation are fallible.",
+        "Conversation state is held in Streamlit session state rather than durable storage."
+      ],
+      "evidence": [
+        "README.md",
+        "src/main.py",
+        "src/reasoning_engine.py",
+        "src/vision_helper.py",
+        "src/language_helper.py",
+        "requirements.txt"
+      ]
+    },
+    {
+      "id": "arxiv-cs-chatbot",
+      "name": "arXiv CS Research Assistant",
+      "repository": "ARXIV_CS_CHATBOT",
+      "repositoryUrl": "https://github.com/prakharmadhesiya2620-cloud/ARXIV_CS_CHATBOT",
+      "rank": 2,
+      "technicalQuality": "high",
+      "internshipRelevance": "high",
+      "description": "A research assistant that prepares a filtered arXiv subset and provides semantic paper search, local-LLM explanations, keyword extraction, conversation-aware Q&A, and embedding visualization.",
+      "technologies": {
+        "languages": ["Python"],
+        "frameworks": ["Streamlit", "LangChain"],
+        "libraries": ["FAISS", "HuggingFace sentence-transformers", "Pandas", "scikit-learn", "Plotly", "YAKE", "tqdm"],
+        "modelsAndTools": ["Ollama", "sentence-transformers/all-MiniLM-L6-v2", "llama3.2"]
+      },
+      "features": [
+        "Streaming JSONL filter and seeded sampling by arXiv category prefix",
+        "FAISS semantic retrieval over paper titles and abstracts",
+        "LLM summaries and conversational Q&A with recent-turn context",
+        "Unsupervised YAKE keyword extraction",
+        "PCA projection of sampled paper embeddings"
+      ],
+      "limitations": [
+        "The generated FAISS index and full raw arXiv metadata file are not included.",
+        "The answer prompt permits general model knowledge when retrieved context is incomplete.",
+        "Documented performance claims have not been independently reproduced."
+      ],
+      "evidence": [
+        "README.md",
+        "data_prep.py",
+        "src/arxiv_helper.py",
+        "src/main.py",
+        "requirements.txt"
+      ]
+    },
+    {
+      "id": "medical-qa-chatbot",
+      "name": "MedQuAD Medical QA Chatbot",
+      "repository": "MEDICAL_QA_CHATBOT",
+      "repositoryUrl": "https://github.com/prakharmadhesiya2620-cloud/MEDICAL_QA_CHATBOT",
+      "rank": 3,
+      "technicalQuality": "high",
+      "internshipRelevance": "high",
+      "description": "A Streamlit medical question-answering application using local semantic retrieval and Ollama, with utilities for incrementally adding new CSV or text knowledge sources.",
+      "technologies": {
+        "languages": ["Python"],
+        "frameworks": ["Streamlit", "LangChain"],
+        "libraries": ["FAISS", "HuggingFace sentence-transformers", "schedule", "python-dotenv"],
+        "modelsAndTools": ["Ollama", "sentence-transformers/all-MiniLM-L6-v2", "llama3.2"]
+      },
+      "features": [
+        "FAISS retrieval over the included MedQuAD CSV",
+        "Prompt-structured answer and medical-entity response",
+        "Incoming CSV/TXT discovery and content-hash deduplication",
+        "Incremental vector-index updates",
+        "Optional scheduled update process"
+      ],
+      "limitations": [
+        "Generated FAISS index and ingestion manifest are not included.",
+        "The updater does not implement a text-splitting stage despite the README describing chunking.",
+        "The UI does not retain multi-turn conversation or display retrieved source documents.",
+        "The README's dataset pair count differs from the included CSV's physical line count; the count was not treated as a verified record total.",
+        "The project documentation states it is not a substitute for professional medical advice."
+      ],
+      "evidence": [
+        "Readme.md",
+        "src/langchain_helper.py",
+        "src/knowledge_updater.py",
+        "src/schedule_updates.py",
+        "src/main.py",
+        "requirements.txt"
+      ]
+    },
+    {
+      "id": "realtime-fraud-detector",
+      "name": "Real-Time Fraud Detector",
+      "repository": "realtime-fraud-detector",
+      "repositoryUrl": "https://github.com/prakharmadhesiya2620-cloud/realtime-fraud-detector",
+      "rank": 4,
+      "technicalQuality": "medium-high",
+      "internshipRelevance": "high",
+      "description": "A fraud-classification demo combining a class-weighted Random Forest training pipeline, local TCP transaction replay, and a Streamlit inference dashboard.",
+      "technologies": {
+        "languages": ["Python"],
+        "frameworks": ["Streamlit"],
+        "libraries": ["Pandas", "NumPy", "scikit-learn", "joblib"],
+        "modelsAndTools": ["RandomForestClassifier", "Python socket and JSON libraries"]
+      },
+      "features": [
+        "Stratified train/test split and amount scaling",
+        "Class-weighted Random Forest training",
+        "Classification report, PR-AUC, and ROC-AUC calculation",
+        "Newline-delimited JSON transaction replay over local TCP",
+        "Live dashboard metrics, rolling trend, alerts, and local event logging"
+      ],
+      "limitations": [
+        "The stream is a local dataset replay with intentionally injected fraud examples, not a live financial feed.",
+        "The documented training dataset is absent; serialized model assets are present.",
+        "README performance metrics have not been independently reproduced.",
+        "No dependency manifest is present."
+      ],
+      "evidence": [
+        "README.md",
+        "scripts/train_detector.py",
+        "scripts/transaction_stream.py",
+        "scripts/app.py"
+      ]
+    },
+    {
+      "id": "customer-churn-predictor",
+      "name": "Bank Customer Churn Predictor",
+      "repository": "customer-churn-predictor",
+      "repositoryUrl": "https://github.com/prakharmadhesiya2620-cloud/customer-churn-predictor",
+      "rank": 5,
+      "technicalQuality": "medium",
+      "internshipRelevance": "high",
+      "description": "A Streamlit churn-prediction demo backed by a scikit-learn logistic-regression pipeline with explicit demographic encoding, numeric scaling, and feature ordering.",
+      "technologies": {
+        "languages": ["Python"],
+        "frameworks": ["Streamlit"],
+        "libraries": ["Pandas", "NumPy", "scikit-learn", "joblib"],
+        "modelsAndTools": ["LogisticRegression", "StandardScaler"]
+      },
+      "features": [
+        "Identifier-column removal and median imputation for numeric columns",
+        "Geography and gender one-hot encoding",
+        "Scaling of four continuous features",
+        "Fixed 11-feature model input order",
+        "Interactive churn prediction UI"
+      ],
+      "limitations": [
+        "Training data file churn_data.csv is not included.",
+        "The UI supplies fixed baseline values for several model features.",
+        "feature_blueprint.pkl is present but not used by the inspected UI.",
+        "README performance metrics have not been independently reproduced.",
+        "No dependency manifest is present."
+      ],
+      "evidence": [
+        "README.md",
+        "pipeline.py",
+        "app.py"
+      ]
+    },
+    {
+      "id": "ai-voice-assistant",
+      "name": "Destiny AI Voice Assistant",
+      "repository": "AI-Voice-Assistant",
+      "repositoryUrl": "https://github.com/prakharmadhesiya2620-cloud/AI-Voice-Assistant",
+      "rank": 6,
+      "technicalQuality": "medium",
+      "internshipRelevance": "medium-high",
+      "description": "A Python desktop voice-assistant demo that combines custom wake-word detection, speech input, local LLM responses, speech synthesis, and a system-telemetry HUD.",
+      "technologies": {
+        "languages": ["Python"],
+        "frameworks": ["CustomTkinter", "Tkinter"],
+        "libraries": ["NumPy", "PvRecorder", "openWakeWord", "SpeechRecognition", "pyttsx3", "psutil", "Ollama"],
+        "modelsAndTools": ["Custom ONNX wake-word model", "Ollama llama3"]
+      },
+      "features": [
+        "Custom ONNX wake-word model loading and threshold detection",
+        "Microphone command capture and transcription",
+        "Ollama chat response and pyttsx3 speech output",
+        "Background threads and GUI event scheduling",
+        "CPU/RAM telemetry and status/log HUD"
+      ],
+      "limitations": [
+        "Command transcription uses SpeechRecognition's Google recognition service, so this part is not fully local as the README claims.",
+        "No dependency manifest is present.",
+        "README setup directory name and wake-word wording do not fully align with the inspected project code."
+      ],
+      "evidence": [
+        "README.md",
+        "voice_engine.py",
+        "gui_dashboard.py",
+        "main.py",
+        "mic_test.py"
+      ]
+    },
+    {
+      "id": "customer-service-chatbot",
+      "name": "Customer Service Chatbot & Sentiment Tracker",
+      "repository": "CUSTOMER_SERVICE_CHATBOT",
+      "repositoryUrl": "https://github.com/prakharmadhesiya2620-cloud/CUSTOMER_SERVICE_CHATBOT",
+      "rank": 7,
+      "technicalQuality": "medium",
+      "internshipRelevance": "medium",
+      "description": "A Streamlit customer-support Q&A demo that retrieves answers from a CSV-backed FAISS index and prompts a local LLM for a sentiment-aware response.",
+      "technologies": {
+        "languages": ["Python"],
+        "frameworks": ["Streamlit", "LangChain"],
+        "libraries": ["FAISS", "HuggingFace sentence-transformers", "python-dotenv"],
+        "modelsAndTools": ["Ollama", "sentence-transformers/all-MiniLM-L6-v2", "llama3.2"]
+      },
+      "features": [
+        "CSV knowledge-base indexing and vector retrieval",
+        "Prompt-formatted sentiment, emotion, and answer output",
+        "Session-based positive, negative, and neutral counters"
+      ],
+      "limitations": [
+        "Sentiment is prompt-based and inferred by parsing generated text, not produced by a separate trained classifier.",
+        "requirements.txt lists google-generativeai while the inspected implementation uses Ollama.",
+        "The source imports langchain_classic, which is not declared in requirements.txt.",
+        "A generated FAISS index is not present."
+      ],
+      "evidence": [
+        "README.md",
+        "src/langchain_helper.py",
+        "src/main.py",
+        "requirements.txt"
+      ]
+    },
+    {
+      "id": "trading-bot",
+      "name": "Binance Futures Testnet Trading CLI",
+      "repository": "trading_bot",
+      "repositoryUrl": "https://github.com/prakharmadhesiya2620-cloud/trading_bot",
+      "rank": 8,
+      "technicalQuality": "medium",
+      "internshipRelevance": "medium",
+      "description": "A Python command-line tool that validates basic order inputs and submits signed market or limit orders to the Binance Futures testnet.",
+      "technologies": {
+        "languages": ["Python"],
+        "frameworks": ["Click"],
+        "libraries": ["Requests"],
+        "modelsAndTools": ["HMAC-SHA256", "Binance Futures testnet API"]
+      },
+      "features": [
+        "CLI parsing for symbol, side, order type, quantity, and price",
+        "Basic input validation",
+        "HMAC-SHA256 signed HTTP requests",
+        "Market and GTC limit order payloads",
+        "Console and file logging"
+      ],
+      "limitations": [
+        "Implements testnet order submission, not a signal-generation strategy or live trading.",
+        "Does not implement portfolio/risk management or exchange-specific precision/filter validation.",
+        "Credential configuration has fallback handling; use reviewed testnet credentials via the intended environment configuration."
+      ],
+      "evidence": [
+        "README.md",
+        "main.py",
+        "bot/client.py",
+        "bot/orders.py",
+        "bot/validators.py",
+        "bot/logging_config.py",
+        "requirements.txt"
+      ]
+    },
+    {
+      "id": "my-first-ai-project",
+      "name": "AI Core Foundation Pipeline",
+      "repository": "my-first-ai-project",
+      "repositoryUrl": "https://github.com/prakharmadhesiya2620-cloud/my-first-ai-project",
+      "rank": 9,
+      "technicalQuality": "low-medium",
+      "internshipRelevance": "low-medium",
+      "description": "A dependency-free Python learning project demonstrating basic feature-matrix profiling and summaries of a mock accuracy history.",
+      "technologies": {
+        "languages": ["Python"],
+        "frameworks": [],
+        "libraries": [],
+        "modelsAndTools": ["Python built-ins"]
+      },
+      "features": [
+        "Manual row/column count and matrix flattening",
+        "Global minimum and maximum calculation",
+        "Average and peak accuracy-history summary",
+        "Hard-coded demonstration inputs"
+      ],
+      "limitations": [
+        "Uses mock data and does not train or evaluate a model.",
+        "Matrix profiling assumes rectangular, non-empty data for min/max calculation."
+      ],
+      "evidence": [
+        "README.md",
+        "main.py"
+      ]
+    },
+    {
+      "id": "numpy-exercises",
+      "name": "NumPy Array Exercises",
+      "repository": "Numpy",
+      "repositoryUrl": "https://github.com/prakharmadhesiya2620-cloud/Numpy",
+      "rank": 10,
+      "technicalQuality": "low",
+      "internshipRelevance": "low",
+      "description": "A Python 3 Jupyter notebook containing introductory NumPy array-operation exercises.",
+      "technologies": {
+        "languages": ["Python"],
+        "frameworks": ["Jupyter Notebook"],
+        "libraries": ["NumPy"],
+        "modelsAndTools": []
+      },
+      "features": [
+        "Array creation and standard deviation",
+        "Reshape, flatten, and transpose operations",
+        "Zeros, ones, identity, and range arrays",
+        "Random arrays, sorting, uniqueness, concatenation, and splitting"
+      ],
+      "limitations": [
+        "Notebook exercises only; no README, dependency manifest, package structure, or application entry point."
+      ],
+      "evidence": [
+        "Untitled4.ipynb"
+      ]
+    }
+  ]
+}
